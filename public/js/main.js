@@ -21,7 +21,7 @@ function Chip() {
     this.left = Math.floor(Math.random() * (500 - (this.height_width + 5))) + 'px';
 
     this.handleChipClick = (e) => {
-        currentScore += parseInt(e.target.innerText);
+        currentScore += this.value;
         updateScore(currentScore);
         e.target.style.display = "none";
     }
@@ -41,6 +41,7 @@ function Chip() {
 
         BOARD.appendChild(chip);
     }
+    this.createChipDiv();
     
 }
 
@@ -48,7 +49,6 @@ function createChips() {
     updateScore(currentScore);
     for(let i = 0; i <= numberOfChips; i++) {
         let newChip = new Chip;
-        newChip.createChipDiv();
     }
 }
 
